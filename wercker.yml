@@ -26,7 +26,7 @@ build-domain-in-home-image:
                     -t $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:$WERCKER_GIT_COMMIT \
                     -t $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:latest .
               else
-                docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+                docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD container-registry.oracle.com
                 docker build --file Dockerfile.create \
                     --force-rm=true \
                     -t $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:$WERCKER_GIT_COMMIT \
